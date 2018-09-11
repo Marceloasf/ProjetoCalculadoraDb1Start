@@ -14,5 +14,4 @@ public class MessageRestService {
 		String result = "Restful example : " + msg;
 		return Response.status(200).entity(result).build();
 	}
-
 }
