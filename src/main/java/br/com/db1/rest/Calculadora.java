@@ -3,6 +3,7 @@ package br.com.db1.rest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
 
 @Path("/calculadora")
 public class Calculadora{
@@ -30,8 +31,9 @@ public class Calculadora{
 	
 	@GET
 	@Path("/somar/{valor1}/{valor2}")
-	public void somar(@PathParam("valor1") Double primeiroValor, @PathParam("valor2") Double segundoValor){
+	public Response somar(@PathParam("valor1") Double primeiroValor, @PathParam("valor2") Double segundoValor){
 		this.resultado = primeiroValor + segundoValor;
+		return Response.status(200).entity(resultado).build();
 	}
 	
 	public void subtrair(){
