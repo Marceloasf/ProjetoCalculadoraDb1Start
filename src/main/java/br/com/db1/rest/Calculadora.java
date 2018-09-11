@@ -8,8 +8,7 @@ import javax.ws.rs.core.Response;
 @Path("/calculadora")
 public class Calculadora{
 	
-	private int resultado;
-
+	private Integer resultado;
 	
 	@GET
 	@Path("/somar/{valor1}/{valor2}")
