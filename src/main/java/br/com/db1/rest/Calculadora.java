@@ -21,15 +21,21 @@ public class Calculadora{
 	@Path("/subtrair/{valor1}/{valor2}")
 	public Response subtrair(@PathParam("valor1") Integer primeiroValor, @PathParam("valor2") Integer segundoValor){
 			this.resultado = primeiroValor - segundoValor;
-			return Response.status(200).entity(resultado).build();
+			return Response.status(200).entity(resultado.toString()).build();
 	}
 	
-	public void dividir(){
-	//	this.resultado = primeiroValor/resultado;
+	@GET
+	@Path("/dividir/{valor1}/{valor2}")
+	public Response dividir(@PathParam("valor1") Integer primeiroValor, @PathParam("valor2") Integer segundoValor){
+		this.resultado = primeiroValor/resultado;
+		return Response.status(200).entity(resultado.toString()).build();
 	}
 	
-	public void multiplicar(){
-	//	this.resultado = primeiroValor * resultado;
+	@GET
+	@Path("/multiplicar/{valor1}/{valor2}")
+	public Response multiplicar(@PathParam("valor1") Integer primeiroValor, @PathParam("valor2") Integer segundoValor){
+		this.resultado = primeiroValor * resultado;
+		return Response.status(200).entity(resultado.toString()).build();
 	}
 	
 }
