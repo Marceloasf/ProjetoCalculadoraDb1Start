@@ -4,7 +4,6 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.ext.MessageBodyWriter;
 
 @Path("/calculadora")
 public class Calculadora{
@@ -15,7 +14,7 @@ public class Calculadora{
 	@Path("/somar/{valor1}/{valor2}")
 	public Response somar(@PathParam("valor1") Integer primeiroValor, @PathParam("valor2") Integer segundoValor){
 		this.resultado = primeiroValor + segundoValor;
-		return Response.status(200).entity(resultado).build();
+		return Response.status(200).entity(resultado.toString()).build();
 	}
 	
 	@GET
